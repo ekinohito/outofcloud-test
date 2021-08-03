@@ -55,13 +55,15 @@ export default {
     max-width: 800px;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
     align-content: center;
   }
 
   .slider__show {
     width: 640px;
     height: 450px;
+    margin: 30px;
+    padding-bottom: 30px;
     overflow: hidden;
   }
 

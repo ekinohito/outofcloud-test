@@ -21,14 +21,16 @@ export default {
 
 <style scoped>
   .slider-card {
+    padding: 40px 40px 0;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
-    width: 640px;
-    height: 450px;
+    max-width: 640px;
+    height: 410px;
     background-color: #FFFFFF;
-    border-radius: 5px;
+    border-radius: 10px;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.1)
   }
 
   .slider-card__image {
@@ -37,10 +39,11 @@ export default {
     max-height: 284px;
     width: 100%;
     min-height:160px;
+    margin: 0 0 28px 0;
   }
 
   .slider-card__label {
-    margin-top: 28px
+    margin: 0;
   }
 
   .slider-card__description {
