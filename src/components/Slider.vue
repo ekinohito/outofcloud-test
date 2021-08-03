@@ -1,7 +1,7 @@
 <template>
   <div class="slider">
     <img src="../assets/icons/Arrow-left.svg"
-         class="slider__button" alt="<" @click="prevSlide"/>
+         class="slider__button" :class="{ 'slider__button_disabled': currentIsFirst() }" alt="<" @click="prevSlide"/>
     <div class="slider__show">
       <template v-for="slide in slides" :key="slide.id">
         <div class="slider__slide" :class="{
@@ -9,12 +9,13 @@
           'slider__slide_displaced-right': slide.id > currentSlide
         }">
           <SliderCard
-              :image="require(`@/assets/slider/${slide.image}`)"
+              :image="require(`@/assets/slider/${slide.image}`)" :id="slide.id"
               :title="slide.title" :description="slide.description"/>
         </div>
       </template>
     </div>
-    <img src="../assets/icons/Arrow-right.svg" class="slider__button" alt=">" @click="nextSlide"/>
+    <img src="../assets/icons/Arrow-right.svg"
+         class="slider__button" :class="{ 'slider__button_disabled': currentIsLast() }" alt=">" @click="nextSlide"/>
   </div>
 </template>
 
@@ -71,7 +72,8 @@ export default {
     height: 0;
     transform: translate(0);
     transition-property: all;
-    transition-duration: 1s;
+    transition-duration: .5s;
+    transition-timing-function: ease-out;
   }
 
   .slider__slide_displaced-left {
@@ -84,5 +86,11 @@ export default {
   .slider__button {
     height: 40px;
     align-self: center;
+    cursor: pointer;
+  }
+
+  .slider__button_disabled {
+    cursor: default;
+    opacity: 20%;
   }
 </style>

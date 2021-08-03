@@ -1,6 +1,9 @@
 <template>
   <div class="slider-card">
-    <img class="slider-card__image" :src="image" :alt="title"/>
+    <div class="slider-card__image-wrapper">
+      <span class="slider-card__badge">{{id}}</span>
+      <img class="slider-card__image" :src="image" :alt="title"/>
+    </div>
     <p class="slider-card__label">
       <span class="slider-card__description slider-card__description_bold">{{title}}</span><br/>
       <span class="slider-card__description">{{description}}</span>
@@ -12,6 +15,7 @@
 export default {
   name: "SliderCard",
   props: {
+    id: Number,
     image: String,
     title: String,
     description: String
@@ -27,10 +31,11 @@ export default {
     justify-content: flex-start;
     align-items: center;
     max-width: 640px;
-    height: 410px;
+    height: 450px;
+    box-sizing: border-box;
     background-color: #FFFFFF;
     border-radius: 10px;
-    box-shadow: 0 0 40px rgba(0, 0, 0, 0.1)
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.1);
   }
 
   .slider-card__image {
@@ -40,6 +45,24 @@ export default {
     width: 100%;
     min-height:160px;
     margin: 0 0 28px 0;
+  }
+
+  .slider-card__image-wrapper {
+    position: relative;
+  }
+
+  .slider-card__badge {
+    position: absolute;
+    top: -12px;
+    left: -4px;
+    width: 50px;
+    height: 50px;
+    background-color: #FFFFFF;
+    color: #7DB945;
+    font-size: 22px;
+    line-height: 50px;
+    font-weight: bold;
+    border-radius: 25px;
   }
 
   .slider-card__label {
