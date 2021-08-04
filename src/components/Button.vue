@@ -1,5 +1,5 @@
 <template>
-  <button class="button" :class="{ 'button_outlined': outlined }" @click="action">{{text}}</button>
+  <button class="button" :class="{ 'button_outlined': outlined, 'button_large': large }" @click="action">{{text}}</button>
 </template>
 
 <script>
@@ -8,7 +8,8 @@ export default {
   props: {
     text: String,
     action: Function,
-    outlined: Boolean
+    outlined: Boolean,
+    large: Boolean
   }
 }
 </script>
@@ -19,8 +20,7 @@ export default {
     font-size: 22px;
     font-weight: bold;
     border-radius: 10px;
-    width: 340px;
-    height: 70px;
+    padding: 10px;
     color: #FFFFFF;
     background-color: #7DB945;
     border: none;
@@ -31,5 +31,10 @@ export default {
     background-color: #FFFFFF;
     color: #7DB945;
     border: 2px solid #7DB945;
+  }
+
+  .button_large {
+    width: 340px;
+    height: 70px;
   }
 </style>

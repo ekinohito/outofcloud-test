@@ -2,7 +2,7 @@
   <Popup :is-open="isOpen" :close="closePopup"/>
   <div class="container">
     <Slider :slides="slides"/>
-    <Button text="К покупкам" :action="openPopup"/>
+    <Button text="К покупкам" :action="openPopup" large/>
   </div>
 </template>
 
@@ -39,6 +39,8 @@ export default {
 <style>
 body {
   margin: 0;
+  color: #2c3e50;
+  background-color: #F6F6F6;
 }
 
 @font-face {
@@ -67,7 +69,5 @@ body {
   font-family: RotondaC, Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  background-color: #F6F6F6;}
+  text-align: center;}
 </style>
