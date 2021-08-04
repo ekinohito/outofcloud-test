@@ -52,20 +52,35 @@ export default {
 </script>
 
 <style scoped>
+
   .slider {
     max-width: 800px;
+    align-self: center;
     display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
     justify-content: center;
     align-content: center;
   }
 
   .slider__show {
-    width: 640px;
+    max-width: 640px;
+    min-width: 300px;
     height: 450px;
     margin: 30px;
     padding-bottom: 30px;
     overflow: hidden;
+  }
+
+  @media(max-width: 768px) {
+    .slider__show {
+      flex: 0 0 100%;
+    }
+
+    .slider__button {
+      order: 1;
+      padding: 0 60px 30px;
+    }
   }
 
   .slider__slide {
